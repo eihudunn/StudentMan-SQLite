@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/studentListFragment">
+
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="vn.edu.hust.studentman.StudentListFragment"
+        android:label="Student List"
+        tools:layout="@layout/fragment_student_list">
+        <action
+            android:id="@+id/action_studentListFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="vn.edu.hust.studentman.AddFragment"
+        android:label="Add Student"
+        tools:layout="@layout/fragment_add_student" />
+
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="vn.edu.hust.studentman.EditFragment"
+        android:label="Edit Student"
+        tools:layout="@layout/fragment_edit_student">
+        <argument
+            android:name="studentName"
+            app:argType="string" />
+        <argument
+            android:name="studentId"
+            app:argType="string" />
+    </fragment>
+</navigation>
